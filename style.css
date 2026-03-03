@@ -1,0 +1,492 @@
+/* ===============================
+   GOOGLE FONT
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* ===============================
+   ROOT VARIABLES
+================================= */
+:root {
+  --bg: #f3f1eb;
+  --bg-gradient: linear-gradient(135deg, #f8f6f1, #efe9dc);
+
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-hover: #ffffff;
+
+  --primary: #1c1c1c;
+  --secondary: #5a5a5a;
+
+  --accent: #c6a13a;
+  --accent-light: #f5d76e;
+
+  --border: rgba(212, 175, 55, 0.35);
+  --border-glow: rgba(212, 175, 55, 0.6);
+
+  --radius-sm: 10px;
+  --radius-md: 20px;
+
+  --max-width: 1100px;
+
+  --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-float: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   GLOBAL RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Background Glow */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,0.08), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212,175,55,0.05), transparent 50%);
+  z-index: -1;
+  animation: bgPulse 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* ===============================
+   NAVIGATION
+================================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+nav:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-float);
+}
+
+/* Logo */
+nav h3 {
+  position: absolute;
+  left: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+/* Nav Links */
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  position: relative;
+  padding: 4px 0;
+  transition: var(--transition);
+  letter-spacing: 0.3px;
+}
+
+/* Underline animation */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+/* Active link */
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::before {
+  width: 100%;
+}
+
+/* ===============================
+   LOGIN BUTTON
+================================= */
+.login-btn {
+  position: absolute;
+  right: 2rem;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  transition: var(--transition);
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(212,175,55,0.45);
+}
+
+.login-btn::before {
+  display: none;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav h3 {
+    position: static;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .login-btn {
+    position: static;
+  }
+}
+
+/* ===============================
+   GLOBAL SECTION SPACING
+================================= */
+section {
+  padding: 5rem 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ===============================
+   HERO SECTION (HOME)
+================================= */
+.hero {
+  text-align: center;
+  padding: 7rem 1rem;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+/* ===============================
+   CARD (USED IN HOME + ABOUT)
+================================= */
+.card {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-float);
+}
+
+/* ===============================
+   GRID SYSTEM
+================================= */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ===============================
+   MENU PAGE
+================================= */
+.menu-grid {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-float);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+
+.menu-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   BUTTON STYLE
+================================= */
+.btn,
+.menu-item button {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover,
+.menu-item button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.35);
+}
+
+/* ===============================
+   LOGIN PAGE
+================================= */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.login-card h2 {
+  margin-bottom: 1rem;
+}
+
+.login-sub {
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--secondary);
+}
+
+.input-group input {
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.input-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+  outline: none;
+}
+
+/* ===============================
+   CART PAGE
+================================= */
+/* ===============================
+   CART PAGE
+================================= */
+
+#cart {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Cart Item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.cart-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+}
+
+/* Cart Image */
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Name + Price */
+.cart-item span {
+  flex: 1;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+/* Remove Button */
+.cart-item button {
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cart-item button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 59, 59, 0.3);
+}
+
+/* Total Styling (Centered) */
+#cart h3 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* ===============================
+   ABOUT PAGE LIST
+================================= */
+.card ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.card ul li {
+  margin-bottom: 0.6rem;
+  color: var(--secondary);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  border-top: 1px solid var(--border);
+}
