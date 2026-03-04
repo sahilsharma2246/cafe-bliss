@@ -197,14 +197,14 @@ nav h3 {
   /* Smaller logo */
   nav h3 {
     position: static;
-    font-size: 1.2rem;         /* reduced size */
+    font-size: 0.7rem;         /* reduced size */
   }
 
   /* Tighter nav links */
   .nav-links {
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;               /* reduced space */
+    gap: 0.5rem;               /* reduced space */
   }
 
   .nav-links a {
@@ -214,7 +214,7 @@ nav h3 {
   /* Smaller login button */
   .login-btn {
     position: static;
-    padding: 0.5rem 1.1rem;    /* compact button */
+    padding: 0.1rem 0.8rem;    /* compact button */
     font-size: 0.85rem;
   }
 
@@ -514,4 +514,11 @@ footer {
   font-size: 0.9rem;
   color: var(--secondary);
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  nav { flex-direction: row !important; }
+  nav h3 { position: absolute !important; left: 1rem !important; }
+  .nav-links { flex-direction: row !important; }
+  .login-btn { position: absolute !important; right: 1rem !important; }
 }
