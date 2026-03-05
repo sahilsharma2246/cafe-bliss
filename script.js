@@ -1,13 +1,13 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Add item to cart
+
 function addToCart(name, price, image) {
   cart.push({ name, price, image });
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${name} added to cart!`);
 }
 
-// Display cart items
+
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   let cartDiv = document.getElementById("cart");
@@ -28,7 +28,7 @@ function displayCart() {
   cartDiv.innerHTML += `<h3>Total: ₹${total}</h3>`;
 }
 
-// Remove item from cart
+
 function removeItem(index) {
   let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
   cartItems.splice(index, 1);

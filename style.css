@@ -1,11 +1,7 @@
-/* ===============================
-   GOOGLE FONT
-================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 
-/* ===============================
-   ROOT VARIABLES
-================================= */
+
 :root {
   --bg: #f3f1eb;
   --bg-gradient: linear-gradient(135deg, #f8f6f1, #efe9dc);
@@ -32,9 +28,7 @@
   --shadow-float: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* ===============================
-   GLOBAL RESET
-================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +48,6 @@ body {
   position: relative;
 }
 
-/* Background Glow */
 body::before {
   content: '';
   position: fixed;
@@ -71,9 +64,7 @@ body::before {
   100% { opacity: 1; }
 }
 
-/* ===============================
-   NAVIGATION
-================================= */
+
 nav {
   position: sticky;
   top: 0;
@@ -94,7 +85,7 @@ nav:hover {
   box-shadow: var(--shadow-float);
 }
 
-/* Logo */
+
 nav h3 {
   position: absolute;
   left: 2rem;
@@ -106,13 +97,13 @@ nav h3 {
   -webkit-text-fill-color: transparent;
 }
 
-/* Nav Links Container */
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
 }
 
-/* Nav Links */
+
 .nav-links a {
   text-decoration: none;
   font-weight: 600;
@@ -124,7 +115,7 @@ nav h3 {
   letter-spacing: 0.3px;
 }
 
-/* Underline animation */
+
 .nav-links a::before {
   content: '';
   position: absolute;
@@ -145,7 +136,7 @@ nav h3 {
   width: 100%;
 }
 
-/* Active link */
+
 .nav-links a.active {
   color: var(--accent);
 }
@@ -154,9 +145,7 @@ nav h3 {
   width: 100%;
 }
 
-/* ===============================
-   LOGIN BUTTON
-================================= */
+
 .login-btn {
   position: absolute;
   right: 2rem;
@@ -179,59 +168,51 @@ nav h3 {
   display: none;
 }
 
-/* ===============================
-   RESPONSIVE
-================================= */
-/* ===============================
-   RESPONSIVE
-================================= */
+
 @media (max-width: 768px) {
 
-  /* Make navbar thinner */
+  
   nav {
     flex-direction: column;
-    gap: 0.6rem;               /* reduced spacing */
-    padding: 0.6rem 1rem;      /* thinner top & bottom */
+    gap: 0.6rem;               
+    padding: 0.6rem 1rem;      
   }
 
-  /* Smaller logo */
+
   nav h3 {
     position: static;
-    font-size: 0.7rem;         /* reduced size */
+    font-size: 0.9rem;        
   }
 
-  /* Tighter nav links */
+
   .nav-links {
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;               /* reduced space */
+    gap: 0.5rem;             
   }
 
   .nav-links a {
-    font-size: 0.9rem;         /* slightly smaller text */
+    font-size: 0.9rem;        
   }
 
-  /* Smaller login button */
+  
   .login-btn {
     position: static;
-    padding: 0.1rem 0.8rem;    /* compact button */
+    padding: 0.1rem 0.8rem;    
     font-size: 0.85rem;
   }
 
-  /* Reduce hero spacing on mobile */
+  
   .hero {
-    padding: 4rem 1rem;        /* less top spacing */
+    padding: 4rem 1rem;        
   }
 
   section {
-    padding: 3rem 0;           /* tighter sections */
+    padding: 3rem 0;         
   }
 
 }
 
-/* ===============================
-   GLOBAL SECTION SPACING
-================================= */
 section {
   padding: 5rem 0;
 }
@@ -249,9 +230,6 @@ h2 {
   margin-bottom: 3rem;
 }
 
-/* ===============================
-   HERO SECTION (HOME)
-================================= */
 .hero {
   text-align: center;
   padding: 7rem 1rem;
@@ -263,9 +241,7 @@ h2 {
   margin-bottom: 2rem;
 }
 
-/* ===============================
-   CARD (USED IN HOME + ABOUT)
-================================= */
+
 .card {
   background: var(--surface);
   backdrop-filter: blur(20px);
@@ -282,9 +258,7 @@ h2 {
   box-shadow: var(--shadow-float);
 }
 
-/* ===============================
-   GRID SYSTEM
-================================= */
+
 .grid {
   display: grid;
   gap: 2rem;
@@ -294,9 +268,7 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* ===============================
-   MENU PAGE
-================================= */
+
 .menu-grid {
   width: 90%;
   max-width: var(--max-width);
@@ -339,9 +311,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* ===============================
-   BUTTON STYLE
-================================= */
+
 .btn,
 .menu-item button {
   display: inline-block;
@@ -361,9 +331,7 @@ h2 {
   box-shadow: 0 10px 25px rgba(212,175,55,0.35);
 }
 
-/* ===============================
-   LOGIN PAGE
-================================= */
+
 .login-section {
   display: flex;
   justify-content: center;
@@ -415,12 +383,6 @@ h2 {
   outline: none;
 }
 
-/* ===============================
-   CART PAGE
-================================= */
-/* ===============================
-   CART PAGE
-================================= */
 
 #cart {
   margin-top: 2rem;
@@ -429,7 +391,7 @@ h2 {
   gap: 1.5rem;
 }
 
-/* Cart Item */
+
 .cart-item {
   display: flex;
   align-items: center;
@@ -447,7 +409,7 @@ h2 {
   box-shadow: var(--shadow-float);
 }
 
-/* Cart Image */
+
 .cart-item img {
   width: 70px;
   height: 70px;
@@ -455,14 +417,14 @@ h2 {
   border-radius: var(--radius-sm);
 }
 
-/* Name + Price */
+
 .cart-item span {
   flex: 1;
   margin-left: 1rem;
   font-weight: 600;
 }
 
-/* Remove Button */
+
 .cart-item button {
   padding: 0.5rem 1.2rem;
   background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
@@ -480,7 +442,7 @@ h2 {
   box-shadow: 0 8px 20px rgba(255, 59, 59, 0.3);
 }
 
-/* Total Styling (Centered) */
+
 #cart h3 {
   text-align: center;
   margin-top: 2rem;
@@ -491,9 +453,7 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* ===============================
-   ABOUT PAGE LIST
-================================= */
+
 .card ul {
   margin-top: 1rem;
   padding-left: 1.2rem;
@@ -504,9 +464,7 @@ h2 {
   color: var(--secondary);
 }
 
-/* ===============================
-   FOOTER
-================================= */
+
 footer {
   text-align: center;
   padding: 2rem;
