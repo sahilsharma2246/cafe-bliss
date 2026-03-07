@@ -1,59 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Café Bliss - Login</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <title>Café Bliss - Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h3>𝓒𝓪𝓯é 𝓑𝓵𝓲𝓼𝓼</h3>
 
-  <nav>
-    <h3>𝓒𝓪𝓯é 𝓑𝓵𝓲𝓼𝓼</h3>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart🛒</a>
+        <a href="about.html">About</a>
+      </div>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="cart.html">Cart🛒</a>
-      <a href="about.html">About</a>
-    </div>
+      <a href="login.html" class="login-btn active">Login</a>
+    </nav>
 
-    <a href="login.html" class="login-btn active">Login</a>
-  </nav>
+    <section class="login-section">
+      <div class="login-card">
+        <h2>Welcome Back ☕</h2>
+        <p class="login-sub">Sign in to continue your coffee journey.</p>
 
-  
-  <section class="login-section">
-    <div class="login-card">
+        <form>
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required />
+          </div>
 
-      <h2>Welcome Back ☕</h2>
-      <p class="login-sub">Sign in to continue your coffee journey.</p>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" required />
+          </div>
 
-      <form>
-        <div class="input-group">
-          <label>Email</label>
-          <input type="email" placeholder="Enter your email" required>
-        </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
 
-        <div class="input-group">
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password" required>
-        </div>
+        <p class="extra-text">
+          Don’t have an account?
+          <a href="#">Register</a>
+        </p>
+      </div>
+    </section>
 
-        <button type="submit" class="btn">Login</button>
-      </form>
-
-      <p class="extra-text">
-        Don’t have an account?
-        <a href="#">Register</a>
-      </p>
-
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Café Bliss | Crafted with ❤️ and Coffee
-  </footer>
-
-</body>
+    <footer>© 2026 Café Bliss | Crafted with ❤️ and Coffee</footer>
+  </body>
 </html>

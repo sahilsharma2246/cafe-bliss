@@ -18,7 +18,7 @@ function displayCart() {
     total += item.price;
     cartDiv.innerHTML += `
       <div class="cart-item">
-        <img src="${item.image}" alt="${item.name}" class="cart-img">
+        <img src="${item.image}" alt="${item.name}" class="cart-img" loading="lazy">
         <span>${item.name} - ₹${item.price}</span>
         <button onclick="removeItem(${index})">Remove</button>
       </div>
